@@ -11,7 +11,6 @@ import com.MBASE.model.Book;
 import com.MBASE.service.BookService;
 
 @RestController
-@RequestMapping("/api/booklist")
 public class BookList {
 	@Autowired
 	public BookService bookService;
@@ -20,7 +19,7 @@ public class BookList {
 	public String Home() {
 		return "Welcome to book hub.............................................";		
 	}
-	@RequestMapping("/getAll")
+	@RequestMapping("/api/booklist/getAll")
 	public Hashtable<String, Book>getAll(){
 		return bookService.getAll();
 	}
