@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-list
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: book-list
+  template:
+    metadata:
+      labels:
+        run: book-list
+    spec:
+      containers:
+      - name: book-list-app
+        image: mburumdocker/book-list-app:1.0
